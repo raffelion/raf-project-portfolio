@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>RAF Project - Personal Web</title>
-  <meta name="description" content="Website personal Abdur Rafi Arrasyid (RAF Project).">
+  <title>RAF Project - Portofolio Abdur Rafi Arrasyid</title>
+  <meta name="description" content="Portofolio Abdur Rafi Arrasyid, Teknisi Repair Center dengan pengalaman PKL di PT Telkom Akses Medan.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
@@ -15,71 +15,142 @@
     <nav class="nav">
       <div class="brand">RAF Project</div>
       <div class="menu">
-        <a href="#tentang">Tentang</a>
-        <a href="#skill">Skill</a>
-        <a href="#projek">Projek</a>
+        <a href="#tentang">Profil</a>
+        <a href="#experience">Pengalaman Kerja</a>
+        <a href="#pendidikan">Pendidikan</a>
+        <a href="#kemampuan">Kemampuan</a>
+        <a href="#sertifikasi">Sertifikasi</a>
+        <a href="#projek">Proyek</a>
         <a href="#kontak">Kontak</a>
       </div>
     </nav>
 
     <section class="hero-content">
-      <p class="tag">Personal Website</p>
-      <h1>Halo, gue <span>Abdur Rafi Arrasyid</span></h1>
+      <p class="tag">Portofolio Pribadi</p>
+      <h1>Abdur Rafi Arrasyid</h1>
       <p class="subtitle">
-        Bisa dipanggil Abdur atau Rafi. Gue dari Medan dan lagi fokus jadi Frontend Developer.
+        Teknisi Repair Center yang pernah menjalani Praktik Kerja Lapangan di PT Telkom Akses Medan dan saat ini juga mengembangkan kemampuan frontend secara otodidak.
       </p>
-      <a class="btn" href="#kontak">Hubungi Gue</a>
+      <div class="hero-cta">
+        <a class="btn" href="#experience">Lihat Pengalaman</a>
+        <a class="btn btn-ghost" href="mailto:elionraff@gmail.com">Hubungi Saya</a>
+        <a class="btn btn-whatsapp" href="https://wa.me/6283162915810?text=Halo%20Abdur%2C%20saya%20tertarik%20untuk%20berdiskusi%20lebih%20lanjut." target="_blank" rel="noreferrer">Chat WhatsApp</a>
+        <a class="btn btn-cv" href="./CV-Abdur-Rafi-Arrasyid.pdf" download>Download CV</a>
+      </div>
     </section>
   </header>
 
   <main class="container">
     <section id="tentang" class="card">
-      <h2>Tentang Gue</h2>
+      <h2>Profil Singkat</h2>
       <p>
-        Gue lagi belajar ngoding dari dasar, khususnya jalur frontend. Backend masih bikin deg-degan,
-        jadi sekarang gue fokus nguatin pondasi dulu di sisi tampilan dan interaksi web.
+        Saya adalah siswa jurusan Teknik Jaringan dan Komputer yang memiliki minat pada bidang teknis perangkat serta pengembangan web dasar.
+        Pengalaman PKL di PT Telkom Akses Medan membentuk kemampuan saya dalam ketelitian kerja, troubleshooting, quality control, dan disiplin mengikuti SOP.
+      </p>
+      <p>
+        Di luar pengalaman teknisi, saya juga mempelajari pemrograman web secara mandiri sebagai pengembangan keterampilan tambahan,
+        khususnya pada HTML, CSS, dan JavaScript dasar.
       </p>
     </section>
 
-    <section id="skill" class="card">
-      <h2>Skill yang Lagi Dipelajari</h2>
+    <section id="experience" class="card">
+      <h2>Pengalaman Kerja</h2>
+      <div class="timeline">
+        <article class="experience-item">
+          <h3>PT Telkom Akses - Repair Center Medan</h3>
+          <p><strong>Juli 2025 - November 2025</strong></p>
+          <div class="exp-details" id="exp-details">
+            <p>
+              Selama Praktik Kerja Lapangan (PKL) sebagai teknisi perbaikan splicer, saya bertanggung jawab pada proses
+              perawatan, perbaikan, serta pengelolaan perangkat splicer dari berbagai STO di wilayah Sumatera.
+              Aktivitas utama meliputi pemeriksaan kondisi perangkat, pembersihan komponen, penggantian elektroda,
+              serta troubleshooting pada splicer yang mengalami kerusakan.
+            </p>
+            <p>
+              Saya juga terlibat dalam quality control untuk memastikan perangkat berfungsi dengan baik sebelum dikirim kembali ke lapangan,
+              termasuk proses pembongkaran (unpacking), penataan perangkat di gudang, dan pendataan keluar-masuk perangkat secara rapi dan terstruktur.
+            </p>
+            <p>
+              Selama PKL, saya terbiasa bekerja mengikuti standar operasional prosedur (SOP), menjaga ketelitian,
+              serta menerapkan disiplin kerja dan prinsip keselamatan kerja (K3) di lingkungan repair center.
+            </p>
+          </div>
+          <button class="exp-toggle" type="button" aria-expanded="false" aria-controls="exp-details">Lihat Selengkapnya</button>
+        </article>
+      </div>
+    </section>
+
+    <section id="pendidikan" class="card">
+      <h2>Pendidikan</h2>
+      <div class="timeline">
+        <article>
+          <h3>SMKS Muhammadiyah 9 Medan</h3>
+          <p><strong>2024 - 2026</strong></p>
+          <p>Jurusan: Teknik Jaringan dan Komputer</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="kemampuan" class="card">
+      <h2>Kemampuan Teknis</h2>
       <div class="chips">
+        <span>Perbaikan Splicer</span>
+        <span>Troubleshooting Perangkat</span>
+        <span>Quality Control</span>
+        <span>Pendataan Perangkat</span>
+        <span>Manajemen Stok</span>
         <span>HTML</span>
         <span>CSS</span>
         <span>JavaScript (Dasar)</span>
       </div>
     </section>
 
-    <section class="card">
-      <h2>Target 2026</h2>
-      <ul class="goals">
-        <li>Rilis minimal 3 proyek frontend sederhana.</li>
-        <li>Paham JavaScript dasar sampai DOM manipulation lancar.</li>
-        <li>Punya portfolio yang siap dipakai untuk apply magang atau freelance.</li>
-      </ul>
+    <section id="softskills" class="card">
+      <h2>Soft Skills</h2>
+      <div class="chips">
+        <span>Komunikasi</span>
+        <span>Kerja Tim</span>
+        <span>Disiplin Kerja</span>
+        <span>Teliti</span>
+        <span>Problem Solving</span>
+        <span>Manajemen Waktu</span>
+      </div>
+    </section>
+
+    <section id="sertifikasi" class="card">
+      <h2>Sertifikasi</h2>
+      <div class="chips">
+        <span>PKL Telkom Akses</span>
+        <span>Kompetensi TKJ</span>
+        <span>K3 Dasar</span>
+        <span>Servis Splicer</span>
+      </div>
+    </section>
+
+    <section class="card availability">
+      <h2>Tersedia Untuk</h2>
+      <p class="status-pill">Available for Internship & Freelance Project</p>
+      <div class="chips">
+        <span>Internship</span>
+        <span>Freelance Skala Kecil</span>
+        <span>Landing Page</span>
+        <span>UI Slicing</span>
+      </div>
     </section>
 
     <section id="projek" class="card">
-      <h2>Projek</h2>
+      <h2>Proyek Pembelajaran Coding</h2>
       <div class="project-grid">
         <article class="project">
           <h3>waifubluearchive</h3>
-          <p>
-            Proyek frontend berbasis HTML dari repo GitHub gue. Ini jadi bukti progres belajar yang nyata.
-          </p>
+          <p>Proyek frontend berbasis HTML/CSS sebagai media latihan struktur layout dan styling.</p>
+          <ul>
+            <li>Peran: Frontend Developer</li>
+            <li>Teknologi: HTML, CSS</li>
+          </ul>
           <div class="project-links">
             <a href="https://github.com/raffelion/waifubluearchive" target="_blank" rel="noreferrer">Lihat Repo</a>
-            <a href="https://raffelion.github.io/waifubluearchive/" target="_blank" rel="noreferrer">Lihat Website</a>
-          </div>
-        </article>
-
-        <article class="project">
-          <h3>RAF Project (Roadmap)</h3>
-          <p>
-            Ruang eksperimen buat ningkatin skill frontend: layout, styling, dan interaksi JavaScript dasar.
-          </p>
-          <div class="project-links">
-            <a href="https://github.com/raffelion" target="_blank" rel="noreferrer">Profil GitHub</a>
+            <a href="https://raffelion.github.io/waifubluearchive/" target="_blank" rel="noreferrer">Live Demo</a>
           </div>
         </article>
       </div>
@@ -87,14 +158,74 @@
 
     <section id="kontak" class="card">
       <h2>Kontak</h2>
+      <p>Telepon: <a href="tel:+6283162915810">+62 831 6291 5810</a></p>
+      <p>WhatsApp: <a href="https://wa.me/6283162915810?text=Halo%20Abdur%2C%20saya%20ingin%20menghubungi%20Anda%20terkait%20kerja%20sama." target="_blank" rel="noreferrer">Chat via WhatsApp</a></p>
       <p>Email: <a href="mailto:elionraff@gmail.com">elionraff@gmail.com</a></p>
+      <p>Alamat: Medan, Sumatera Utara, Indonesia, 20353</p>
+      <p>GitHub: <a href="https://github.com/raffelion" target="_blank" rel="noreferrer">github.com/raffelion</a></p>
       <p>Instagram: <a href="https://instagram.com/raff_elion" target="_blank" rel="noreferrer">@raff_elion</a></p>
-      <p>Github: <a href="https://github.com/raffelion" target="_blank" rel="noreferrer">github.com/raffelion</a></p>
     </section>
   </main>
 
   <footer class="foot">
-    <p>Built by Abdur Rafi Arrasyid - RAF Project</p>
+    <p>Dibuat oleh Abdur Rafi Arrasyid - RAF Project</p>
   </footer>
+
+  <a class="wa-float" href="https://wa.me/6283162915810?text=Halo%20Abdur%2C%20saya%20tertarik%20untuk%20berdiskusi%20lebih%20lanjut." target="_blank" rel="noreferrer" aria-label="Hubungi via WhatsApp">WhatsApp</a>
+
+  <script>
+    document.documentElement.classList.add("js");
+
+    const cleanUrl = () => {
+      history.replaceState(null, "", window.location.pathname + window.location.search);
+    };
+
+    document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach((link) => {
+      link.addEventListener("click", (event) => {
+        const target = document.querySelector(link.getAttribute("href"));
+        if (!target) return;
+
+        event.preventDefault();
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        cleanUrl();
+      });
+    });
+
+    const revealElements = document.querySelectorAll(".card, .project, .timeline article");
+    revealElements.forEach((el) => el.classList.add("reveal"));
+
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.14 }
+    );
+
+    revealElements.forEach((el) => revealObserver.observe(el));
+
+    const expToggle = document.querySelector(".exp-toggle");
+    if (expToggle) {
+      expToggle.addEventListener("click", () => {
+        const item = expToggle.closest(".experience-item");
+        if (!item) return;
+
+        const expanded = item.classList.toggle("is-expanded");
+        expToggle.textContent = expanded ? "Tampilkan Ringkasan" : "Lihat Selengkapnya";
+        expToggle.setAttribute("aria-expanded", String(expanded));
+      });
+    }
+
+    window.addEventListener("load", () => {
+      if (window.location.hash) {
+        window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+        cleanUrl();
+      }
+    });
+  </script>
 </body>
 </html>
