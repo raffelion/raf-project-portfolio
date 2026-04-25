@@ -56,9 +56,13 @@ body {
   font-size: 1.1rem;
 }
 
-.brand-logo {
-  width: 48px;
-  height: 48px;
+.nav .brand .brand-logo {
+  width: 42px;
+  height: 42px;
+  max-width: 42px;
+  min-width: 42px;
+  flex: 0 0 42px;
+  display: block;
   border-radius: 50%;
   object-fit: cover;
   border: 1px solid rgba(148, 163, 184, 0.34);
@@ -403,9 +407,12 @@ p {
     gap: 12px;
   }
 
-  .brand-logo {
-    width: 42px;
-    height: 42px;
+  .nav .brand .brand-logo {
+    width: 36px;
+    height: 36px;
+    max-width: 36px;
+    min-width: 36px;
+    flex-basis: 36px;
   }
 
   .menu {
