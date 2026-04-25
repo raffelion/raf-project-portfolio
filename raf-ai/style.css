@@ -30,23 +30,25 @@ body {
   overflow: hidden;
 }
 
-a {
-  color: inherit;
-}
-
 .ai-shell {
-  max-width: 1400px;
+  position: relative;
+  max-width: 100%;
   margin: 0 auto;
-  min-height: 100vh;
-  padding: 20px;
+  height: 100vh;
+  padding: 10px;
 }
 
 .topbar {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  z-index: 10;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 14px;
-  margin-bottom: 16px;
+  pointer-events: none;
 }
 
 .back-link,
@@ -61,10 +63,11 @@ a {
   text-decoration: none;
   backdrop-filter: blur(10px);
   transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  pointer-events: auto;
 }
 
 .back-link {
-  background: rgba(10, 18, 33, 0.52);
+  background: rgba(10, 18, 33, 0.74);
 }
 
 .full-link {
@@ -81,56 +84,17 @@ a {
 }
 
 .layout {
-  display: grid;
-  grid-template-rows: auto minmax(0, 1fr);
-  gap: 16px;
-  height: calc(100vh - 56px);
+  height: 100%;
 }
 
-.summary-bar,
 .embed-card {
   border: 1px solid var(--line);
-  border-radius: 24px;
-  background: var(--panel);
+  border-radius: 28px;
+  background: rgba(10, 18, 33, 0.7);
   box-shadow: var(--shadow);
   backdrop-filter: blur(12px);
-}
-
-.summary-bar {
-  display: grid;
-  gap: 10px;
-  padding: 20px 24px;
-}
-
-.eyebrow {
-  margin: 0;
-  color: var(--accent);
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-size: 0.75rem;
-}
-
-.summary-copy {
-  display: grid;
-  gap: 10px;
-}
-
-.summary-copy h1 {
-  margin: 0;
-  font-size: clamp(1.8rem, 3vw, 2.8rem);
-  line-height: 1.08;
-}
-
-.summary-copy p {
-  margin: 0;
-  max-width: 78ch;
-  color: var(--muted);
-  line-height: 1.7;
-}
-
-.embed-card {
   overflow: hidden;
-  min-height: 0;
+  height: 100%;
 }
 
 .ai-frame {
@@ -148,21 +112,25 @@ a {
 
   .ai-shell {
     min-height: 100vh;
-    padding: 16px;
+    height: 100vh;
+    padding: 12px;
   }
 
   .layout {
-    height: auto;
-    min-height: calc(100vh - 48px);
+    height: 100%;
   }
 
   .embed-card {
-    min-height: 72vh;
+    border-radius: 20px;
   }
 }
 
 @media (max-width: 640px) {
   .topbar {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    right: 12px;
     flex-direction: column;
     align-items: stretch;
   }
@@ -172,13 +140,7 @@ a {
     width: 100%;
   }
 
-  .summary-bar {
-    padding: 18px;
-    border-radius: 18px;
-  }
-
   .embed-card {
-    min-height: 74vh;
     border-radius: 18px;
   }
 }
