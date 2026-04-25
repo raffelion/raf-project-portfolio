@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RAF AI - Embedded AI Playground</title>
+  <meta name="description" content="RAF AI adalah halaman eksperimen AI interaktif milik Abdur Rafi Arrasyid yang bisa dipakai langsung dari browser.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="ai-shell">
+    <header class="topbar">
+      <a class="back-link" href="../">Kembali ke Portofolio</a>
+      <div class="brand-mark">
+        <span class="brand-dot"></span>
+        <span>RAF AI</span>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="intro card">
+        <p class="eyebrow">Embedded AI Experience</p>
+        <h1>RAF AI Playground</h1>
+        <p class="lead">
+          Halaman ini menaruh AI langsung di dalam portofolio, jadi visitor bisa ngetes ide, minta bantuan nulis, brainstorming,
+          atau sekadar melihat demo interaktif tanpa pindah ke website lain.
+        </p>
+
+        <div class="hero-pills">
+          <span>Browser-Based</span>
+          <span>Prompt Ready</span>
+          <span>Portfolio Demo</span>
+        </div>
+
+        <div class="quick-prompts" aria-label="Contoh prompt cepat">
+          <button class="prompt-chip" type="button" data-prompt="Buatkan ringkasan profil profesional Abdur Rafi Arrasyid dalam bahasa Indonesia yang singkat, rapi, dan cocok untuk website portofolio.">Ringkasan Profil</button>
+          <button class="prompt-chip" type="button" data-prompt="Kasih ide project frontend sederhana tapi kelihatan profesional buat ditaruh di portofolio siswa TKJ.">Ide Project</button>
+          <button class="prompt-chip" type="button" data-prompt="Tolong buat draft balasan email formal untuk calon klien yang menanyakan jasa pembuatan landing page.">Draft Email Klien</button>
+          <button class="prompt-chip" type="button" data-prompt="Jelaskan HTML, CSS, dan JavaScript dengan bahasa yang mudah dipahami pemula.">Belajar Dasar Web</button>
+        </div>
+      </section>
+
+      <section class="chat card">
+        <div class="chat-head">
+          <div>
+            <p class="eyebrow">Live AI Panel</p>
+            <h2>Chat Dengan RAF AI</h2>
+          </div>
+          <p class="status" id="statusText">Siap dipakai</p>
+        </div>
+
+        <div class="chat-log" id="chatLog" aria-live="polite">
+          <article class="bubble bubble-ai">
+            <p class="bubble-role">RAF AI</p>
+            <p>Halo, saya siap bantu brainstorming, nulis, atau menjelaskan topik teknis langsung dari halaman ini.</p>
+          </article>
+        </div>
+
+        <form class="composer" id="chatForm">
+          <label class="sr-only" for="userPrompt">Tulis pesan ke RAF AI</label>
+          <textarea id="userPrompt" name="prompt" rows="4" placeholder="Tulis pertanyaan atau prompt di sini..."></textarea>
+          <div class="composer-actions">
+            <p class="helper-text">Cocok untuk demo portofolio, eksplorasi ide, dan simulasi asisten AI langsung di website.</p>
+            <button class="send-btn" type="submit">Kirim Prompt</button>
+          </div>
+        </form>
+      </section>
+
+      <aside class="sidebar">
+        <section class="card stack">
+          <p class="eyebrow">Use Cases</p>
+          <h2>Yang Bisa Dicoba</h2>
+          <ul class="feature-list">
+            <li>Merangkum profil atau pengalaman kerja</li>
+            <li>Membantu draft email atau chat profesional</li>
+            <li>Brainstorm ide konten dan project website</li>
+            <li>Menjelaskan konsep teknis dengan bahasa sederhana</li>
+          </ul>
+        </section>
+
+        <section class="card stack">
+          <p class="eyebrow">Catatan</p>
+          <h2>Implementation Note</h2>
+          <p class="note">
+            RAF AI berjalan di sisi browser memakai endpoint AI publik. Kalau provider lagi sibuk atau menolak request,
+            halaman tetap tampil normal dan user tinggal coba lagi.
+          </p>
+        </section>
+      </aside>
+    </main>
+  </div>
+
+  <script>
+    const chatForm = document.getElementById("chatForm");
+    const userPrompt = document.getElementById("userPrompt");
+    const chatLog = document.getElementById("chatLog");
+    const statusText = document.getElementById("statusText");
+    const promptChips = document.querySelectorAll(".prompt-chip");
+
+    const systemPrompt = [
+      "You are RAF AI, a helpful portfolio assistant for Abdur Rafi Arrasyid.",
+      "Respond in clear Indonesian unless the user's request is clearly in another language.",
+      "Be concise, practical, and helpful.",
+      "If the user asks about Abdur Rafi Arrasyid, mention that he focuses on repair center work, frontend basics, and company profile websites."
+    ].join(" ");
+
+    const appendBubble = (role, content) => {
+      const article = document.createElement("article");
+      article.className = `bubble ${role === "user" ? "bubble-user" : "bubble-ai"}`;
+
+      const roleText = document.createElement("p");
+      roleText.className = "bubble-role";
+      roleText.textContent = role === "user" ? "You" : "RAF AI";
+
+      const message = document.createElement("p");
+      message.textContent = content;
+
+      article.append(roleText, message);
+      chatLog.appendChild(article);
+      chatLog.scrollTop = chatLog.scrollHeight;
+    };
+
+    const setLoading = (isLoading) => {
+      statusText.textContent = isLoading ? "Sedang berpikir..." : "Siap dipakai";
+      chatForm.querySelector("button").disabled = isLoading;
+      userPrompt.disabled = isLoading;
+    };
+
+    const askAI = async (prompt) => {
+      const finalPrompt = `${systemPrompt}\n\nUser request: ${prompt}`;
+      const endpoint = `https://text.pollinations.ai/${encodeURIComponent(finalPrompt)}`;
+
+      const response = await fetch(endpoint, {
+        method: "GET",
+        headers: {
+          Accept: "text/plain"
+        }
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+      }
+
+      return response.text();
+    };
+
+    chatForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const prompt = userPrompt.value.trim();
+      if (!prompt) return;
+
+      appendBubble("user", prompt);
+      userPrompt.value = "";
+      setLoading(true);
+
+      try {
+        const answer = await askAI(prompt);
+        appendBubble("ai", answer.trim() || "Maaf, respons AI kosong. Silakan coba lagi.");
+      } catch (error) {
+        appendBubble("ai", "RAF AI sedang tidak bisa menjawab sekarang. Coba beberapa saat lagi atau ganti prompt yang lebih pendek.");
+        console.error(error);
+      } finally {
+        setLoading(false);
+        userPrompt.focus();
+      }
+    });
+
+    promptChips.forEach((button) => {
+      button.addEventListener("click", () => {
+        userPrompt.value = button.dataset.prompt || "";
+        userPrompt.focus();
+      });
+    });
+  </script>
+</body>
+</html>
