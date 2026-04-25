@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mengalihkan ke RAF AI</title>
   <meta name="description" content="Mengalihkan ke halaman resmi RAF AI.">
-  <meta http-equiv="refresh" content="0; url=https://ai.rafproject.biz.id/">
+  <meta http-equiv="refresh" content="2; url=https://ai.rafproject.biz.id/">
   <link rel="canonical" href="https://ai.rafproject.biz.id/">
   <style>
     :root {
@@ -31,18 +31,44 @@
     }
 
     .panel {
-      max-width: 640px;
-      padding: 24px;
+      width: min(680px, 100%);
+      padding: 32px;
       border: 1px solid rgba(148, 163, 184, 0.18);
-      border-radius: 20px;
+      border-radius: 24px;
       background: rgba(10, 18, 33, 0.82);
       text-align: center;
       box-shadow: 0 20px 60px rgba(1, 7, 20, 0.42);
+      backdrop-filter: blur(14px);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      background: rgba(15, 23, 42, 0.55);
+      color: #4ade80;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.76rem;
+      font-weight: 700;
+    }
+
+    .badge-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #4ade80, #38bdf8);
+      box-shadow: 0 0 20px rgba(74, 222, 128, 0.6);
     }
 
     h1 {
       margin: 0 0 12px;
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.08;
     }
 
     p {
@@ -51,18 +77,149 @@
       color: #9fb1c9;
     }
 
+    .loader-wrap {
+      display: grid;
+      justify-items: center;
+      gap: 18px;
+      margin: 28px 0 24px;
+    }
+
+    .loader {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      border: 6px solid rgba(148, 163, 184, 0.18);
+      border-top-color: #4ade80;
+      border-right-color: #38bdf8;
+      animation: spin 0.9s linear infinite;
+    }
+
+    .loading-text {
+      font-size: 1rem;
+      color: #cbd5e1;
+      font-weight: 600;
+    }
+
+    .progress {
+      width: min(360px, 100%);
+      height: 10px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: rgba(148, 163, 184, 0.12);
+      border: 1px solid rgba(148, 163, 184, 0.08);
+    }
+
+    .progress-bar {
+      width: 45%;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #4ade80, #38bdf8);
+      animation: glide 1.4s ease-in-out infinite;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+
     a {
       color: #4ade80;
+    }
+
+    .action-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      text-decoration: none;
+      background: rgba(15, 23, 42, 0.55);
+      color: #e5eef9;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .action-link.primary {
+      background: linear-gradient(135deg, #4ade80, #38bdf8);
+      color: #04131a;
+      border-color: transparent;
+      font-weight: 700;
+    }
+
+    .action-link:hover {
+      transform: translateY(-2px);
+      border-color: rgba(56, 189, 248, 0.45);
+    }
+
+    .hint {
+      margin-top: 18px;
+      font-size: 0.96rem;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes glide {
+      0% {
+        transform: translateX(-100%);
+      }
+
+      50% {
+        transform: translateX(150%);
+      }
+
+      100% {
+        transform: translateX(260%);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .panel {
+        padding: 24px 18px;
+      }
+
+      .actions {
+        flex-direction: column;
+      }
+
+      .action-link {
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
   <main class="panel">
+    <div class="badge">
+      <span class="badge-dot"></span>
+      <span>RAF AI</span>
+    </div>
     <h1>Mengalihkan ke RAF AI</h1>
-    <p>Jika halaman tidak berpindah otomatis, buka <a href="https://ai.rafproject.biz.id/">RAF AI resmi</a>.</p>
+    <p>Halaman AI resmi sedang dipersiapkan. Jika jaringan sedang lambat, tunggu sebentar sampai proses pengalihan selesai.</p>
+    <div class="loader-wrap" aria-hidden="true">
+      <div class="loader"></div>
+      <div class="loading-text">Membuka ai.rafproject.biz.id...</div>
+      <div class="progress">
+        <div class="progress-bar"></div>
+      </div>
+    </div>
+    <p class="hint">Kalau redirect terasa lama, kamu masih bisa buka manual lewat tombol di bawah.</p>
+    <div class="actions">
+      <a class="action-link primary" href="https://ai.rafproject.biz.id/">Buka RAF AI Sekarang</a>
+      <a class="action-link" href="../">Kembali ke Portofolio</a>
+    </div>
   </main>
   <script>
-    window.location.replace("https://ai.rafproject.biz.id/");
+    window.setTimeout(() => {
+      window.location.replace("https://ai.rafproject.biz.id/");
+    }, 900);
   </script>
 </body>
 </html>
