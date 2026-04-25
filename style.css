@@ -70,10 +70,13 @@ body {
   box-shadow: 0 10px 24px rgba(34, 211, 238, 0.16);
 }
 
-.brand span {
-  display: block;
+.brand-name {
+  display: inline-flex;
+  align-items: center;
+  height: 42px;
   line-height: 1;
-  transform: translateY(-1px);
+  white-space: nowrap;
+  padding-bottom: 1px;
 }
 
 .menu {
@@ -421,8 +424,9 @@ p {
     flex-basis: 36px;
   }
 
-  .brand span {
-    transform: translateY(0);
+  .brand-name {
+    height: 36px;
+    padding-bottom: 1px;
   }
 
   .menu {
