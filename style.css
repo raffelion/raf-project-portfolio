@@ -73,7 +73,7 @@ body {
 .brand span {
   display: block;
   line-height: 1;
-  transform: translateY(2px);
+  transform: translateY(0);
 }
 
 .menu {
@@ -422,7 +422,7 @@ p {
   }
 
   .brand span {
-    transform: translateY(3px);
+    transform: translateY(1px);
   }
 
   .menu {
