@@ -3,86 +3,42 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>RAF AI - Embedded AI Playground</title>
-  <meta name="description" content="RAF AI adalah halaman eksperimen AI interaktif milik Abdur Rafi Arrasyid yang bisa dipakai langsung dari browser.">
+  <title>RAF AI</title>
+  <meta name="description" content="RAF AI untuk informasi resmi RAF Project dan pertanyaan umum dalam satu tampilan ringkas.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <div class="ai-shell">
     <header class="topbar">
       <a class="back-link" href="../">Kembali ke Portofolio</a>
-      <div class="brand-mark">
-        <span class="brand-dot"></span>
-        <span>RAF AI</span>
-      </div>
+      <a class="full-link" href="https://ai.rafproject.biz.id" target="_blank" rel="noreferrer">Buka Full RAF AI</a>
     </header>
 
     <main class="layout">
-      <section class="intro card">
-        <p class="eyebrow">Embedded AI Experience</p>
-        <h1>RAF AI Playground</h1>
-        <p class="lead">
-          Halaman ini sekarang langsung terhubung ke <strong>ai.rafproject.biz.id</strong>, jadi visitor bisa memakai RAF AI
-          resmi dari dalam portofolio tanpa pindah flow.
-        </p>
-
-        <div class="hero-pills">
-          <span>Live Embed</span>
-          <span>ai.rafproject.biz.id</span>
-          <span>Portfolio Connected</span>
-        </div>
-
-        <div class="quick-prompts" aria-label="Aksi cepat RAF AI">
-          <a class="prompt-chip prompt-link" href="https://ai.rafproject.biz.id" target="_blank" rel="noreferrer">Buka Full RAF AI</a>
-          <a class="prompt-chip prompt-link" href="https://ai.rafproject.biz.id/#chatSection" target="_blank" rel="noreferrer">Langsung ke Chat</a>
-        </div>
-      </section>
-
-      <section class="chat card embed-card">
-        <div class="chat-head">
-          <div>
-            <p class="eyebrow">Embedded Live View</p>
-            <h2>RAF AI Dari Subdomain Resmi</h2>
-          </div>
-          <p class="status">Source: ai.rafproject.biz.id</p>
-        </div>
-
-        <div class="embed-shell">
-          <iframe
-            class="ai-frame"
-            src="https://ai.rafproject.biz.id/"
-            title="RAF AI Embedded from ai.rafproject.biz.id"
-            loading="lazy"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allow="clipboard-read; clipboard-write"
-          ></iframe>
-        </div>
-      </section>
-
-      <aside class="sidebar">
-        <section class="card stack">
-          <p class="eyebrow">Use Cases</p>
-          <h2>Yang Bisa Dicoba</h2>
-          <ul class="feature-list">
-            <li>Mengakses RAF AI resmi langsung dari portofolio</li>
-            <li>Menanyakan info RAF Project dari knowledge base AI</li>
-            <li>Membuka versi penuh kalau ingin ruang kerja lebih lega</li>
-            <li>Menunjukkan integrasi real subdomain, bukan demo palsu</li>
-          </ul>
-        </section>
-
-        <section class="card stack">
-          <p class="eyebrow">Catatan</p>
-          <h2>Implementation Note</h2>
-          <p class="note">
-            Embed ini memakai iframe karena subdomain AI punya aplikasi dan API sendiri. Dengan cara ini,
-            `/raf-ai` tetap terkoneksi langsung ke RAF AI resmi tanpa masalah CORS yang nyebelin.
+      <section class="summary-bar">
+        <p class="eyebrow">RAF AI</p>
+        <div class="summary-copy">
+          <h1>Asisten resmi untuk RAF Project</h1>
+          <p>
+            RAF AI difokuskan untuk memberikan informasi resmi tentang RAF Project, tapi tetap bisa dipakai
+            untuk pertanyaan umum kalau user ingin mencoba.
           </p>
-        </section>
-      </aside>
+        </div>
+      </section>
+
+      <section class="embed-card">
+        <iframe
+          class="ai-frame"
+          src="https://ai.rafproject.biz.id/"
+          title="RAF AI"
+          loading="eager"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="clipboard-read; clipboard-write"
+        ></iframe>
+      </section>
     </main>
   </div>
 </body>
